@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:02:37 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 21:05:43 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 22:27:50 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_sorted(t_pslist **s_sa)
 		nex = tmp->next;
 		if (!nex)
 		{
-			return 1;
+			return (1);
 		}
 		else if ((tmp->content) < (nex->content))
 		{

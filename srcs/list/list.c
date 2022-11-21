@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 21:33:25 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 21:28:24 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 21:45:28 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_pslstadd_front(t_pslist **lst, t_pslist *new)
 	}
 	*lst = new;
 }
+
 int	ft_pslstsize(t_pslist *lst)
 {
 	int	size;

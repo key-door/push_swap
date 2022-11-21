@@ -6,18 +6,18 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:31:07 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 21:32:59 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 23:26:56 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_four_min_search(t_pslist **s_sa)
+static int	ft_search_index(t_pslist **s_sa)
 {
 	t_pslist	*lst;
-	int		min;
-	int		i;
-	int		index;
+	int			min;
+	int			i;
+	int			index;
 
 	i = 0;
 	index = 0;
@@ -34,6 +34,14 @@ void	ft_four_min_search(t_pslist **s_sa)
 		}
 		lst = lst->next;
 	}
+	return (index);
+}
+
+void	ft_four_min_search(t_pslist **s_sa)
+{
+	int	index;
+
+	index = ft_search_index(s_sa);
 	if (index == 0)
 		return ;
 	else if (index == 1)
@@ -51,26 +59,9 @@ void	ft_four_min_search(t_pslist **s_sa)
 
 void	ft_five_min_search(t_pslist **s_sa)
 {
-	t_pslist	*lst;
-	int		min;
-	int		i;
-	int		index;
+	int	index;
 
-	i = 0;
-	index = 0;
-	lst = *s_sa;
-	min = lst->rank;
-	lst = lst->next;
-	while (lst)
-	{
-		i++;
-		if ((lst->rank) < min)
-		{
-			min = lst->rank;
-			index = i;
-		}
-		lst = lst->next;
-	}
+	index = ft_search_index(s_sa);
 	if (index == 0)
 		return ;
 	else if (index == 1)

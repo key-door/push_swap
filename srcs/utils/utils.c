@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:04:56 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 20:22:01 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 23:21:09 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_split_free(char **argv)
 		free(argv);
 	}
 }
+
 int	ft_splitlen(char **argv)
 {
 	int	len;

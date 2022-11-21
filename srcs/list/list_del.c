@@ -6,13 +6,13 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 21:34:49 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 20:45:42 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 23:13:41 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pslstdelone(t_pslist *lst, void (*del)(void *))
+static void	ft_pslstdelone(t_pslist *lst, void (*del)(void *))
 {
 	if (lst)
 	{

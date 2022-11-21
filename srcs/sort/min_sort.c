@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   min_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:45:28 by kyoda             #+#    #+#             */
-/*   Updated: 2022/11/21 21:23:57 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 23:40:44 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_two_sorts(t_pslist **s_sa)
+static void	ft_two_sorts(t_pslist **s_sa)
 {
 	t_pslist	*tmp;
 
@@ -28,10 +28,22 @@ void	ft_two_sorts(t_pslist **s_sa)
 	}
 }
 
-void	ft_three_sorts(t_pslist **s_sa)
+static void	ft_tree_sort_continuation(t_pslist **s_sa, t_pslist *tmp)
+{
+	if (((*s_sa)->rank) < ((tmp->next)->rank))
+		ft_sa(s_sa);
+	else if ((tmp->rank) < ((tmp->next)->rank))
+		ft_ra(s_sa);
+	else
+	{
+		ft_sa(s_sa);
+		ft_rra(s_sa);
+	}
+}
+
+static void	ft_three_sorts(t_pslist **s_sa)
 {
 	t_pslist	*tmp;
-
 
 	tmp = (*s_sa)->next;
 	if (((*s_sa)->rank) < (tmp->rank))
@@ -47,19 +59,8 @@ void	ft_three_sorts(t_pslist **s_sa)
 		}
 	}
 	else
-	{
-		if (((*s_sa)->rank) < ((tmp->next)->rank))
-			ft_sa(s_sa);
-		else if ((tmp->rank) < ((tmp->next)->rank))
-			ft_ra(s_sa);
-		else
-		{
-			ft_sa(s_sa);
-			ft_rra(s_sa);
-		}
-	}
+		ft_tree_sort_continuation(s_sa, tmp);
 }
-
 
 void	ft_five_sorts(t_pslist **s_sa, t_pslist **s_sb)
 {

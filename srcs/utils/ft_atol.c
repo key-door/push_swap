@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:04:00 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 20:58:28 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 23:01:53 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,9 @@ long	ft_atol(const char *nptr)
 {
 	long	ans;
 	long	flag;
-	int i;
+	int		i;
 
-	i= 0;
-
+	i = 0;
 	flag = LONG_MAX;
 	while (ft_isspace((int)nptr[i]))
 		i++;

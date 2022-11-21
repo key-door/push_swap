@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 20:31:18 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 20:36:44 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/21 23:01:50 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_coordinate_compression(t_pslist *s_sa, int argc)
 {
-	int		min;
-	int		i;
-	int		j;
+	int			min;
+	int			i;
+	int			j;
 	t_pslist	*tmp;
 	t_pslist	*s_min;
 
@@ -28,7 +28,7 @@ void	ft_coordinate_compression(t_pslist *s_sa, int argc)
 		min = INT_MAX;
 		while (j < argc)
 		{
-			if ((tmp->rank == -1) && ((tmp->content) < min))
+			if ((tmp->rank == -1) && ((tmp->content) <= min))
 			{
 				s_min = tmp;
 				min = tmp->content;
