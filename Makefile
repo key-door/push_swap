@@ -24,14 +24,13 @@ SRCS		=	srcs/check_arg/error_check.c \
 				srcs/utils/utils.c \
 				srcs/main.c
 
-OBJDIR   = ./obj
-OBJS  = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
-
+OBJDIR   = obj
+OBJS  = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(PR)
-		$(CC) -o $(NAME) $(SRCS) $(PRINTF) $(CFLAGS)
+		$(CC) -o $(NAME) $^ $(CFLAGS)
 
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $$(dirname $@)
@@ -39,17 +38,16 @@ $(OBJDIR)/%.o: %.c
 
 $(PR):
 		$(MAKE) -C $(PRINTFDIR)
+printf:
+		$(MAKE) -C $(PRINTFDIR)
 
 clean:
 		$(MAKE) clean -C $(PRINTFDIR)
-		$(RM) ${OBJS}
+		$(RM) -r $(OBJDIR)
 
 fclean: clean
 		$(MAKE) fclean -C $(PRINTFDIR)
-		$(RM) ${NAME}
-
-rmpu :
-	$(RM) ${NAME}
+		$(RM) $(NAME)
 
 re : fclean all
 
