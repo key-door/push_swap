@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:04:00 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 23:01:53 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/22 14:38:32 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ long	ft_atol(const char *nptr)
 	}
 	else if (nptr[i] == '+')
 		i++;
-	ans = ft_strtol(nptr, 10, flag);
+	ans = ft_strtol(&nptr[i], 10, flag);
 	return (ans);
 }

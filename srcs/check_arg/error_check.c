@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:56:48 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 23:24:04 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/22 14:40:53 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static void	ft_check_alpha(int argc, char **argv, int flag)
 			{
 				if (flag == 1)
 					ft_split_free(argv);
+				ft_printf("Error\n");
 				exit(EXIT_SUCCESS);
 			}
 		}
@@ -67,6 +68,7 @@ static void	ft_check_overflow(int argc, char **argv, int flag)
 		{
 			if (flag == 1)
 				ft_split_free(argv);
+			ft_printf("Error\n");
 			exit(EXIT_SUCCESS);
 		}
 	}
@@ -86,6 +88,7 @@ static void	ft_check_samenbr(t_pslist **s_sa)
 			if ((head->content) == (tmp->content))
 			{
 				ft_pslstclear(s_sa, NULL);
+				ft_printf("Error\n");
 				exit(EXIT_SUCCESS);
 			}
 			tmp = tmp->next;
