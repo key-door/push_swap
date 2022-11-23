@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:14:45 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 23:38:52 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/23 23:10:15 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_push_stack(t_pslist **s_sa, int argc, char **argv, int flag)
 
 int	ft_make_stack(int argc, char **argv, t_pslist **s_sa)
 {
+	long	overflow;
+
 	if (argc <= 1)
 		exit(EXIT_SUCCESS);
 	else if (argc == 2)
@@ -47,6 +49,9 @@ int	ft_make_stack(int argc, char **argv, t_pslist **s_sa)
 		argc = ft_splitlen(argv);
 		if (argc <= 1)
 		{
+			overflow = ft_atol(argv[0]);
+			if (overflow < (long)INT_MIN || (long)INT_MAX < overflow)
+				ft_printf("Error\n");
 			ft_split_free(argv);
 			exit(EXIT_SUCCESS);
 		}

@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:51:41 by keys              #+#    #+#             */
-/*   Updated: 2022/11/21 23:37:31 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/23 22:19:14 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int					ft_pslstsize(t_pslist *lst);
 /*make_stack*/
 void				ft_push_stack(t_pslist **s_sa, int argc, char **argv,
 						int flag);
-int				ft_make_stack(int argc, char **argv, t_pslist **s_sa);
+int					ft_make_stack(int argc, char **argv, t_pslist **s_sa);
 
 /*operation*/
 void				ft_sa(t_pslist **s_sa);
@@ -71,6 +71,4 @@ long				ft_atol(const char *nptr);
 void				ft_split_free(char **argv);
 int					ft_splitlen(char **argv);
 
-/*main*/
-int					main(int argc, char **argv);
 #endif

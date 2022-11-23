@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:04:00 by keys              #+#    #+#             */
-/*   Updated: 2022/11/22 15:39:32 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/23 22:58:02 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,65 +21,66 @@ int	ft_isspace(int c)
 		|| c == ' ');
 }
 
-static long	ft_overlong(const char *str, unsigned long result, int base,
-		long flag)
+static long long	ft_overlong(const char *str, unsigned long long result,
+		int base, long long flag)
 {
-	unsigned long	cutoff;
-	unsigned long	last;
+	unsigned long long	cutoff;
+	unsigned long long	last;
 
-	cutoff = (unsigned long)LONG_MAX / (unsigned long)base;
-	last = (unsigned long)LONG_MAX % (unsigned long)base;
+	cutoff = (unsigned long long)LONG_MAX / (unsigned long long)base;
+	last = (unsigned long long)LONG_MAX % (unsigned long long)base;
 	if (result > cutoff)
 		return (flag);
 	else if (result <= cutoff)
 	{
-		if (((result == cutoff) && (((unsigned long)(*str - '0')) <= last))
+		if (((result == cutoff) && (((unsigned long long)(*str - '0')) <= last))
 			|| (result < cutoff))
 		{
-			result *= base;
-			result += *str - '0';
+			result *= (unsigned long long)base;
+			result += (unsigned long long)(*str - '0');
 			str++;
-			if (((result < cutoff)) && ft_isdigit(*(++str)) == 0)
+			if (((result < cutoff)) && ft_isdigit(str[1]) == 0)
 				return (flag);
 		}
 		else
 			return (flag);
 	}
-	if (flag == (long)LONG_MIN)
-		return (-result);
-	return (result);
+	if (flag == (long long)LONG_MIN)
+		return ((long long)result * -1LL);
+	return ((long long)result);
 }
 
-static long	ft_strtol(const char *str, int base, long flag)
+static long long	ft_strtol(const char *str, int base, long long flag)
 {
-	unsigned long	result;
+	unsigned long long	result;
 
 	result = 0;
 	while (*str)
 	{
 		if (ft_isdigit(*str))
 		{
-			if (result >= ((unsigned long)LONG_MAX / (unsigned long)base))
+			if (result >= ((unsigned long long)LONG_MAX
+					/ (unsigned long long)base))
 				return (ft_overlong(str, result, base, flag));
-			result *= base;
-			result += *str - '0';
+			result *= (unsigned long long)base;
+			result += (unsigned long long)(*str - '0');
 			str++;
 		}
 		else
 			break ;
 	}
-	if (flag == (long)LONG_MIN)
+	if (flag == (long long)LONG_MIN)
 	{
-		return (-result);
+		return ((long long)result * -1LL);
 	}
-	return (result);
+	return ((long long)result);
 }
 
 long	ft_atol(const char *nptr)
 {
-	long	ans;
-	long	flag;
-	int		i;
+	long long	ans;
+	long long	flag;
+	int			i;
 
 	i = 0;
 	flag = LONG_MAX;
@@ -93,5 +94,5 @@ long	ft_atol(const char *nptr)
 	else if (nptr[i] == '+')
 		i++;
 	ans = ft_strtol(&nptr[i], 10, flag);
-	return (ans);
+	return ((long)ans);
 }

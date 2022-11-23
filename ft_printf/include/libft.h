@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 21:01:57 by kyoda             #+#    #+#             */
-/*   Updated: 2022/11/21 18:50:23 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/23 22:24:28 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 # define LIBFT_H
 
 # include <ctype.h>
+# include <inttypes.h>
 # include <limits.h>
 # include <math.h>
+# include <stdarg.h>
 # include <stdbool.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdint.h>
-# include <inttypes.h>
-# include <stdarg.h>
-
-
 
 typedef struct s_list
 {

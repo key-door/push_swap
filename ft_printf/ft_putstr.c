@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoda <kyoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 09:19:46 by kyoda             #+#    #+#             */
-/*   Updated: 2022/09/03 11:29:36 by kyoda            ###   ########.fr       */
+/*   Updated: 2022/11/23 22:22:32 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 int	ft_putstr(char *p)
 {
+	int	len;
+
 	if (p == NULL)
 		return (write(1, "(null)", 6));
 	ft_putstr_fd(p, 1);
-	return (int)ft_strlen(p);
+	len = (int)ft_strlen(p);
+	return (len);
 }

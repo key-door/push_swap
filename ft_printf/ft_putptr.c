@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoda <kyoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 08:43:02 by kyoda             #+#    #+#             */
-/*   Updated: 2022/09/03 11:41:35 by kyoda            ###   ########.fr       */
+/*   Updated: 2022/11/23 22:20:01 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static int	put(uintptr_t n, int len)
 	}
 	return (len);
 }
-
 
 int	ft_put_ptr(uintptr_t ptr)
 {
