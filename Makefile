@@ -34,7 +34,7 @@ $(NAME): $(OBJS) $(PR)
 
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $$(dirname $@)
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(INCLUDE) $(CFLAGS) -o $@ -c $<
 
 $(PR):
 		$(MAKE) -C $(PRINTFDIR)
