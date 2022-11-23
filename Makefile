@@ -1,9 +1,9 @@
 NAME 		=	push_swap
-# CC			=	cc
-CC			=	clang
-CFLAGS		=	-Wall -Wextra -Werror -I ./include -g -fsanitize=address -fsanitize=undefined -fsanitize=integer
-# CFLAGS		=	-Wall -Wextra -Werror -I ./include
-# CFLAGS		=	-Wall -Wextra -Werror -I ./include -g -fsanitize=address -fsanitize=undefined
+CC			=	cc
+# CC			=	clang
+# CFLAGS		=	-Wall -Wextra -Werror -g -fsanitize=address -fsanitize=undefined -fsanitize=integer
+# CFLAGS		=	-Wall -Wextra -Werror
+INCLUDE		=	-I ./include
 PRINTFDIR	=	ft_printf
 PRINTF		=	$(PRINTFDIR)/libftprintf.a
 PR		=	$(PRINTF)
@@ -30,7 +30,7 @@ OBJS  = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS) $(PR)
-		$(CC) -o $(NAME) $^ $(CFLAGS)
+		$(CC) $(INCLUDE) -o $(NAME) $^ $(CFLAGS)
 
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $$(dirname $@)
