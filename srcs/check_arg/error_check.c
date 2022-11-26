@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:56:48 by keys              #+#    #+#             */
-/*   Updated: 2022/11/22 14:40:53 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:04:53 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_skip(char *tmp)
 	return (j);
 }
 
-static void	ft_check_alpha(int argc, char **argv, int flag)
+void	ft_check_alpha(int argc, char **argv, int flag)
 {
 	char	**tmp;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:51:41 by keys              #+#    #+#             */
-/*   Updated: 2022/11/23 22:19:14 by keys             ###   ########.fr       */
+/*   Updated: 2022/11/26 16:05:17 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_pslist
 /*check_arg*/
 void				ft_error_check(t_pslist **s_sa, int argc, char **argv,
 						int flag);
+void				ft_check_alpha(int argc, char **argv, int flag);
 
 /*list*/
 void				ft_pslstclear(t_pslist **lst, void (*del)(void *));
