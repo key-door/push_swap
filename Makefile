@@ -1,8 +1,5 @@
 NAME 		=	push_swap
 CC			=	cc
-# CC			=	clang
-# CFLAGS		=	-Wall -Wextra -Werror -g -fsanitize=address -fsanitize=undefined -fsanitize=integer
-# CFLAGS		=	-Wall -Wextra -Werror
 INCLUDE		=	-I ./include
 PRINTFDIR	=	ft_printf
 PRINTF		=	$(PRINTFDIR)/libftprintf.a
